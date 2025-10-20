@@ -1,0 +1,13 @@
+
+services:
+  postgres:
+    image: debezium/postgres:15
+    container_name: postgres
+    restart: unless-stopped
+    ports:
+      - "54321:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
